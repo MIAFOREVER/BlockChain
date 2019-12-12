@@ -29,3 +29,5 @@ cd BlockChain
 进入系统以后如图所示
 ![](pic/admin.png)
 
+## 可能出现的问题
+由于该项目需要配置秘钥,因此如果没能运行成功的话,请将`node/ip/sdk`目录下的文件拷贝到`src/main/resource`下即可
