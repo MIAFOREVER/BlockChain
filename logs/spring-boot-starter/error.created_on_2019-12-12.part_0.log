@@ -1,0 +1,7 @@
+2019-12-12 12:48:55,252 [main] ERROR [org.fisco.bcos.channel.client.Service] Service.java:337 - connectSeconds = 30
+2019-12-12 12:48:55,252 [main] ERROR [org.fisco.bcos.channel.client.Service] Service.java:338 - can not connect to nodes success, please checkout the node status and the sdk config!
+2019-12-12 12:48:55,255 [main] ERROR [org.fisco.bcos.channel.client.Service] Service.java:349 - system error 
+java.lang.Exception: Can not connect to nodes success, please checkout the node status and the sdk config!
+	at org.fisco.bcos.channel.client.Service.run(Service.java:340)
+	at org.fisco.bcos.asset.client.AssetClient.initialize(AssetClient.java:109)
+	at org.fisco.bcos.Application.main(Application.java:13)

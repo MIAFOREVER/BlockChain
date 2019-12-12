@@ -1,0 +1,71 @@
+ 
+ 
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>区块链金融管理系统</title>
+<link rel="stylesheet" href="../src/css/layui.css">
+</head>
+<body class="layui-layout-body">
+<div class="layui-layout layui-layout-admin">
+  <div class="layui-header">
+    <div class="layui-logo">轮胎厂系统</div>
+    <!-- 头部区域（可配合layui已有的水平导航） -->
+    <ul class="layui-nav layui-layout-left">
+      <li class="layui-nav-item"><a href="javascript:;" onclick="funAdmin()">控制台</a></li>
+    </ul>
+  </div>
+  
+  <div class="layui-side layui-bg-black">
+    <div class="layui-side-scroll">
+      <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+      <ul class="layui-nav layui-nav-tree"  lay-filter="test">
+        <li class="layui-nav-item layui-nav-itemed">
+          <a class="" href="javascript:;">基本功能</a>
+          <dl class="layui-nav-child">
+            <dd><a href="javascript:;" onclick="fun1()">发布账单</a></dd>
+            <dd><a href="javascript:;" onclick="fun2()">还款查询</a></dd>
+            <dd><a href="javascript:;" onclick="fun3()">还款</a></dd>
+            <dd><a href="javascript:;" onclick="fun4()">欠款查询</a></dd>
+          </dl>
+        </li>
+      </ul>
+    </div>
+  </div>
+  
+  <div class="layui-body">
+    <!-- 内容主体区域 -->
+    <div style="padding: 15px;", width=800>
+      <blockquote class="layui-elem-quote">当前所有还款记录查询</blockquote>
+      <table class="layui-hide" id="test"></table>
+    </div>
+  </div>
+  
+  <div class="layui-footer">
+    <!-- 底部固定区域 -->
+    © 区块链金融系统
+  </div>
+</div>
+<script src="../src/layui.js"></script>
+<script src="../js/tyre2.js"></script>
+<script>
+function fun1(){
+  window.location.href="../tyre/1";
+} 
+function fun2(){
+  window.location.href="../tyre/2";
+} 
+function fun3(){
+  window.location.href="../tyre/3";
+} 
+function fun4(){
+  window.location.href="../tyre/4";
+} 
+function funAdmin(){
+  window.location.href="../tyre/admin";
+}
+</script>
+</body>
+</html>

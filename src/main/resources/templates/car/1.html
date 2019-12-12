@@ -1,0 +1,166 @@
+ 
+ 
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>区块链金融管理系统</title>
+<link rel="stylesheet" href="../src/css/layui.css">
+</head>
+<body class="layui-layout-body">
+<div class="layui-layout layui-layout-admin">
+  <div class="layui-header">
+    <div class="layui-logo">车企系统</div>
+    <!-- 头部区域（可配合layui已有的水平导航） -->
+    <ul class="layui-nav layui-layout-left">
+      <li class="layui-nav-item"><a href="javascript:;" onclick="funAdmin()">控制台</a></li>
+    </ul>
+  </div>
+  
+  <div class="layui-side layui-bg-black">
+    <div class="layui-side-scroll">
+      <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+      <ul class="layui-nav layui-nav-tree"  lay-filter="test">
+        <li class="layui-nav-item layui-nav-itemed">
+          <a class="" href="javascript:;">基本功能</a>
+          <dl class="layui-nav-child">
+            <dd><a href="javascript:;" onclick="fun1()">发布账单</a></dd>
+            <dd><a href="javascript:;" onclick="fun2()">还款查询</a></dd>
+            <dd><a href="javascript:;" onclick="fun3()">还款</a></dd>
+            <dd><a href="javascript:;" onclick="fun4()">欠款查询</a></dd>
+          </dl>
+        </li>
+      </ul>
+    </div>
+  </div>
+  
+  <div class="layui-body">
+    <!-- 内容主体区域 -->
+    <div style="padding: 15px;">
+      <blockquote class="layui-elem-quote">发布一个账单,如果账单金额超出了可用信用额度,那么将不会发布成功</blockquote>
+      <fieldset class="layui-elem-field site-demo-button">
+      <legend>发布账单</legend>
+      <form class="layui-form" action="">
+          <div class="layui-form-item">
+              <div class="layui-inline">
+                <label class="layui-form-label">选择企业</label>
+                <div class="layui-input-inline">
+                  <select name="company" lay-verify="required" lay-search="">
+                    <option value="">选择一个公司</option>
+                    <option value="bank">银行</option>
+                    <option value="wheelhub">轮毂厂</option>
+                    <option value="tyre">轮胎厂</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="layui-form-item">
+              <div class="layui-inline">
+                <label class="layui-form-label">金额/元</label>
+                <div class="layui-input-inline" style="width: 100px;">
+                  <input type="text" name="money" placeholder="￥" autocomplete="off" class="layui-input">
+                </div>
+              </div>
+            </div>
+            <div class="layui-form-item">
+              <div class="layui-input-block">
+                <button type="submit" class="layui-btn" lay-submit="" lay-filter="table">发布</button>
+                <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+              </div>
+            </div>
+        </form>
+      </fieldset>
+    </div>
+  </div>
+  
+  <div class="layui-footer">
+    <!-- 底部固定区域 -->
+    © 区块链金融系统
+  </div>
+</div>
+<script src="../src/layui.js"></script>
+<script src="../lib/jquery-3.4.1/jquery-3.4.1.min.js" charset="utf-8"></script>
+<script src="../lib/layui-v2.5.4/layui.js" charset="utf-8"></script>
+<script src="../lib/jq-module/jquery.particleground.min.js" charset="utf-8"></script>
+<script>
+//JavaScript代码区域
+layui.use(['form', 'layedit', 'laydate'], function(){
+  var form = layui.form
+  ,layer = layui.layer
+  ,layedit = layui.layedit
+  ,laydate = layui.laydate;
+  
+  //日期
+  laydate.render({
+    elem: '#date'
+  });
+  laydate.render({
+    elem: '#date1'
+  });
+  
+  //创建一个编辑器
+  var editIndex = layedit.build('LAY_demo_editor');
+ 
+  //自定义验证规则
+  form.verify({
+    title: function(value){
+      if(value.length < 5){
+        return '标题至少得5个字符啊';
+      }
+    }
+    ,pass: [
+      /^[\S]{6,12}$/
+      ,'密码必须6到12位，且不能出现空格'
+    ]
+    ,content: function(value){
+      layedit.sync(editIndex);
+    }
+  });
+  
+  //监听提交
+  form.on('submit(table)', function(data){
+    
+    $.ajax({
+        url:"/table/car2",
+        type:'post',//method请求方式，get或者post
+        dataType:'json',//预期服务器返回的数据类型
+        data:JSON.stringify(data.field),//表格数据序列化
+        contentType: "application/json; charset=utf-8",
+        success:function(res){//res为相应体,function为回调函数
+            console.log(res);
+            if(res.success==true){
+                layer.alert('交易成功',{icon:1});
+                //window.location.href=res.url;
+            }else{
+              layer.alert('交易失败！！！',{icon:5});
+            }
+        },
+        error:function(){
+            layer.alert('网络错误,操作失败！！！',{icon:5});
+        }
+    });
+    return false;
+  });
+  
+});
+</script>
+<script>
+function fun1(){
+  window.location.href="../car/1";
+} 
+function fun2(){
+  window.location.href="../car/2";
+} 
+function fun3(){
+  window.location.href="../car/3";
+} 
+function fun4(){
+  window.location.href="../car/4";
+} 
+function funAdmin(){
+  window.location.href="../car/admin";
+}
+</script>
+</body>
+</html>

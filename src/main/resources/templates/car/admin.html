@@ -1,0 +1,116 @@
+ 
+ 
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>区块链金融管理系统</title>
+<link rel="stylesheet" href="../src/css/layui.css">
+</head>
+<body class="layui-layout-body">
+<div class="layui-layout layui-layout-admin">
+  <div class="layui-header">
+    <div class="layui-logo">车企系统</div>
+    <!-- 头部区域（可配合layui已有的水平导航） -->
+    <ul class="layui-nav layui-layout-left">
+      <li class="layui-nav-item"><a href="javascript:;" onclick="funAdmin()">控制台</a></li>
+    </ul>
+  </div>
+  
+  <div class="layui-side layui-bg-black">
+    <div class="layui-side-scroll">
+      <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+      <ul class="layui-nav layui-nav-tree"  lay-filter="test">
+        <li class="layui-nav-item layui-nav-itemed">
+          <a class="" href="javascript:;">基本功能</a>
+          <dl class="layui-nav-child">
+            <dd><a href="javascript:;" onclick="fun1()">发布账单</a></dd>
+            <dd><a href="javascript:;" onclick="fun2()">还款查询</a></dd>
+            <dd><a href="javascript:;" onclick="fun3()">还款</a></dd>
+            <dd><a href="javascript:;" onclick="fun4()">欠款查询</a></dd>
+          </dl>
+        </li>
+      </ul>
+    </div>
+  </div>
+  
+  <div class="layui-body">
+    <!-- 内容主体区域 -->
+    <div style="padding: 15px;">
+      <blockquote class="layui-elem-quote">欢迎进入区块链金融后台系统。</blockquote>
+      <fieldset class="layui-elem-field site-demo-button">
+        <legend>企业可用信用额度</legend>
+        <fieldset class="layui-elem-field layui-field-title" style="margin-top: 50px;">
+          <legend>汽车厂可用信用额度</legend>
+        </fieldset>
+        <div class="layui-row">
+          <div class="layui-col-xs3">
+            <div class="layui-progress layui-progress-big" lay-showpercent="true">
+              <div class="layui-progress-bar" th:lay-percent="${car1}"></div>
+            </div>
+          </div>
+          <div class="layui-col-md3 layui-col-md-offset3">
+              <blockquote class="layui-elem-quote layui-quote-nm" th:text="${car}"></blockquote>
+          </div>
+        </div>
+        <fieldset class="layui-elem-field layui-field-title" style="margin-top: 50px;">
+          <legend>轮胎厂可用信用额度</legend>
+        </fieldset>
+        <div class="layui-row">
+          <div class="layui-col-xs3">
+            <div class="layui-progress layui-progress-big" lay-showpercent="true">
+              <div class="layui-progress-bar" th:lay-percent="${tyre1}"></div>
+            </div>
+          </div>
+          <div class="layui-col-md3 layui-col-md-offset3">
+              <blockquote class="layui-elem-quote layui-quote-nm" th:text="${tyre}"></blockquote>
+          </div>
+        </div>
+        <fieldset class="layui-elem-field layui-field-title" style="margin-top: 50px;">
+          <legend>轮毂厂可用信用额度</legend>
+        </fieldset>
+        <div class="layui-row">
+          <div class="layui-col-xs3">
+            <div class="layui-progress layui-progress-big" lay-showpercent="true">
+              <div class="layui-progress-bar" th:lay-percent="${wheelhub1}"></div>
+            </div>
+          </div>
+          <div class="layui-col-md3 layui-col-md-offset3">
+              <blockquote class="layui-elem-quote layui-quote-nm" th:text="${wheelhub}"></blockquote>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+  </div>
+  
+  <div class="layui-footer">
+    <!-- 底部固定区域 -->
+    © 区块链金融系统
+  </div>
+</div>
+<script src="../src/layui.js"></script>
+<script>
+//JavaScript代码区域
+layui.use('element', function(){
+  var element = layui.element;
+  
+});
+function fun1(){
+  window.location.href="../car/1";
+} 
+function fun2(){
+  window.location.href="../car/2";
+} 
+function fun3(){
+  window.location.href="../car/3";
+}
+function fun4(){
+  window.location.href="../car/4";
+} 
+function funAdmin(){
+  window.location.href="../car/admin";
+}
+</script>
+</body>
+</html>
