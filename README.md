@@ -7,6 +7,10 @@
 - 链端使用了[fisco bcso](https://github.com/FISCO-BCOS/FISCO-BCOS)联盟链的底层,主要是完成了数据的上链
 
 ## 系统运行
+首先启动节点,命令是:
+```
+./nodes/0.0.0.0/start_all.sh
+```
 系统的所有配置已经完成,因此只需要输入如下命令:
 ```
 git clone https://github.com/MIAFOREVER/BlockChain
