@@ -16,10 +16,12 @@ cd BlockChain
 浏览器输入127.0.0.1:8080/login,你就可以看到如下的登录界面
 ![](pic/login.png)
 然后输入正确的密码就可以进入系统了
+
 ||bank|car|wheelhub|tyre|
 |--|--|--|--|--|
 |username|bank|car|wheelhub|tyre|
 |password|123456|123456|123456|123456|
+
 进入系统以后如图所示
 ![](pic/admin.png)
 
