@@ -16,12 +16,14 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.fisco.bcos.asset.client.AssetClient;
 import org.fisco.bcos.web3j.tuples.generated.Tuple2;
+import org.fisco.bcos.encryption.Paillier;
 
 @RestController
 @RequestMapping("/table")
 public class ResponseController {
     @RequestMapping("/bank")
     public TableData tableBank(){
+        // Paillier paillier = Paillier.getInstance();
         AssetClient client = AssetClient.getAssetClient();
         TableData t = new TableData();
         t.setMsg("");
@@ -33,6 +35,7 @@ public class ResponseController {
             d.setId(i);
             d.setFromaccount("bank");
             String t1 = new String(temp.getValue1().get(i));
+            // t1 = paillier.Decryption1(t1);
             d.setToaccount(t1);
             d.setAmount(temp.getValue2().get(i).intValue());
             t.data.add(d);
@@ -67,6 +70,7 @@ public class ResponseController {
 
     @RequestMapping("/car/2")
     public TableData tableCar2(){
+        // Paillier paillier = Paillier.getInstance();
         AssetClient client = AssetClient.getAssetClient();
         TableData t = new TableData();
         t.setMsg("");
@@ -77,6 +81,7 @@ public class ResponseController {
             Data d = new Data();
             d.setId(i);
             String t1 = new String(temp.getValue1().get(i));
+            // t1 = paillier.Decryption1(t1);
             d.setFromaccount("car");
             d.setToaccount(t1);
             d.setAmount(temp.getValue2().get(i).intValue());
@@ -88,6 +93,7 @@ public class ResponseController {
 
     @RequestMapping("/car/4")
     public TableData tableCar4(){
+        // Paillier paillier = Paillier.getInstance();
         AssetClient client = AssetClient.getAssetClient();
         TableData t = new TableData();
         t.setMsg("");
@@ -97,6 +103,7 @@ public class ResponseController {
         {
             Data d = new Data();
             String t1 = new String(temp.getValue1().get(i));
+            // t1 = paillier.Decryption1(t1);
             d.setId(i);
             d.setFromaccount(t1);
             d.setToaccount("car");
@@ -133,6 +140,7 @@ public class ResponseController {
 
     @RequestMapping("/tyre/2")
     public TableData tableTyre2(){
+        // Paillier paillier = Paillier.getInstance();
         AssetClient client = AssetClient.getAssetClient();
         TableData t = new TableData();
         t.setMsg("");
@@ -143,6 +151,7 @@ public class ResponseController {
             Data d = new Data();
             d.setId(i);
             String t1 = new String(temp.getValue1().get(i));
+            // t1 = paillier.Decryption1(t1);
             d.setFromaccount("tyre");
             d.setToaccount(t1);
             d.setAmount(temp.getValue2().get(i).intValue());
@@ -154,6 +163,7 @@ public class ResponseController {
 
     @RequestMapping("/tyre/4")
     public TableData tableTyre4(){
+        // Paillier paillier = Paillier.getInstance();
         AssetClient client = AssetClient.getAssetClient();
         TableData t = new TableData();
         t.setMsg("");
@@ -163,6 +173,7 @@ public class ResponseController {
         {
             Data d = new Data();
             String t1 = new String(temp.getValue1().get(i));
+            // t1 = paillier.Decryption1(t1);
             d.setId(i);
             d.setFromaccount(t1);
             d.setToaccount("tyre");
@@ -199,6 +210,7 @@ public class ResponseController {
 
     @RequestMapping("/wheelhub/2")
     public TableData tableWheelhub2(){
+        // Paillier paillier = Paillier.getInstance();
         AssetClient client = AssetClient.getAssetClient();
         TableData t = new TableData();
         t.setMsg("");
@@ -209,6 +221,7 @@ public class ResponseController {
             Data d = new Data();
             d.setId(i);
             String t1 = new String(temp.getValue1().get(i));
+            // t1 = paillier.Decryption1(t1);
             d.setFromaccount("wheelhub");
             d.setToaccount(t1);
             d.setAmount(temp.getValue2().get(i).intValue());
@@ -220,6 +233,7 @@ public class ResponseController {
 
     @RequestMapping("/wheelhub/4")
     public TableData tableWheelhub4(){
+        // Paillier paillier = Paillier.getInstance();
         AssetClient client = AssetClient.getAssetClient();
         TableData t = new TableData();
         t.setMsg("");
@@ -229,6 +243,7 @@ public class ResponseController {
         {
             Data d = new Data();
             String t1 = new String(temp.getValue1().get(i));
+            // t1 = paillier.Decryption1(t1);
             d.setId(i);
             d.setFromaccount(t1);
             d.setToaccount("wheelhub");

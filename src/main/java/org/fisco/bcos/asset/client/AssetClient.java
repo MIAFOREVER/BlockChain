@@ -45,6 +45,7 @@ import org.fisco.bcos.web3j.tuples.generated.Tuple2;
 import org.fisco.bcos.web3j.tx.Contract;
 import org.fisco.bcos.web3j.tx.TransactionManager;
 import org.fisco.bcos.web3j.tx.gas.ContractGasProvider;
+import org.fisco.bcos.encryption.Paillier;
 
 public class AssetClient {
 
@@ -139,6 +140,8 @@ public class AssetClient {
 	}
 
 	public BigInteger queryAssetAmount(String assetAccount) {
+		// Paillier paillier = Paillier.getInstance();
+		// assetAccount = paillier.Encryption1(assetAccount);
 		try {
 			String contractAddress = loadAssetAddr();
 
@@ -162,6 +165,9 @@ public class AssetClient {
 	}
 
 	public void registerAssetAccount(String assetAccount, BigInteger amount) {
+		// Paillier paillier = Paillier.getInstance();
+		// assetAccount = paillier.Encryption1(assetAccount);
+		// System.out.println("assetAccount:\t" + assetAccount);
 		try {
 			String contractAddress = loadAssetAddr();
 
@@ -189,6 +195,9 @@ public class AssetClient {
 	}
 
 	public int transferAsset(String fromAssetAccount, String toAssetAccount, BigInteger amount) {
+		// Paillier paillier = Paillier.getInstance();
+		// fromAssetAccount = paillier.Encryption1(fromAssetAccount);
+		// toAssetAccount = paillier.Encryption1(toAssetAccount);
 		int retvel = 0;
 		try {
 			String contractAddress = loadAssetAddr();
