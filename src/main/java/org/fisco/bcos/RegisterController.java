@@ -140,24 +140,24 @@ public class RegisterController {
     return "/wheelhub/admin";
   }
 
-  @GetMapping("/wheel/1")
-  public String wheel1() {
-    return "/wheel/1";
+  @GetMapping("/wheelhub/1")
+  public String wheelhub1() {
+    return "/wheelhub/1";
   }
 
-  @GetMapping("/wheel/2")
-  public String wheel2() {
-    return "/wheel/2";
+  @GetMapping("/wheelhub/2")
+  public String wheelhub2() {
+    return "/wheelhub/2";
   }
 
-  @GetMapping("/wheel/3")
+  @GetMapping("/wheelhub/3")
   public String wheel3() {
-    return "/wheel/3";
+    return "/wheelhub/3";
   }
 
-  @GetMapping("/wheel/4")
-  public String wheel4() {
-    return "/wheel/4";
+  @GetMapping("/wheelhub/4")
+  public String wheelhub4() {
+    return "/wheelhub/4";
   }
 }
 

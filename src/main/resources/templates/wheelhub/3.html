@@ -123,7 +123,7 @@ layui.use(['form', 'layedit', 'laydate'], function(){
   form.on('submit(table)', function(data){
     
     $.ajax({
-        url:"/table/wheel3",
+        url:"/table/wheelhub3",
         type:'post',//method请求方式，get或者post
         dataType:'json',//预期服务器返回的数据类型
         data:JSON.stringify(data.field),//表格数据序列化
